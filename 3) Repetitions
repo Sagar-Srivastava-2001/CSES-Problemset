@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void c_p_c()
+{
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+	#endif   
+}
+ 
+int main(){
+	c_p_c();	
+ 
+	string s;
+	cin>>s;
+ 
+	int ans = INT_MIN;
+	char ch = s[0];
+	int len = 1;
+ 
+	for(int i=1;i<s.length();i++){
+		if(s[i] == ch){
+			len++;
+		}
+		else{
+			ans = max(ans,len);
+			ch = s[i];
+			len = 1;
+		}
+	}
+ 
+	ans = max(ans,len);
+ 
+	cout<<ans<<endl;
+}
